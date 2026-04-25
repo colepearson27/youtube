@@ -231,7 +231,7 @@ type videosJSONExtractor struct {
 func (vje videosJSONExtractor) PlaylistEntry() *PlaylistEntry {
 	ds, err := strconv.Atoi(vje.Renderer.Duration)
 	if err != nil {
-		panic("invalid video duration: " + vje.Renderer.Duration)
+		ds = 0
 	}
 	return &PlaylistEntry{
 		ID:         vje.Renderer.ID,
